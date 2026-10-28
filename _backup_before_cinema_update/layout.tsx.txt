@@ -1,0 +1,35 @@
+import type { Metadata } from "next";
+import { Yatra_One, Mukta } from "next/font/google";
+import "./globals.css";
+import "./theme.css";
+import "./wedding.css";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import EnquireFab from "@/components/EnquireFab";
+
+const head = Yatra_One({ weight: "400", subsets: ["latin", "devanagari"], variable: "--font-head", display: "swap" });
+const body = Mukta({ weight: ["400", "500", "600", "700"], subsets: ["latin", "devanagari"], variable: "--font-body", display: "swap" });
+
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://videh.example";
+
+export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
+  title: { default: "Hotel Videh & Marriage Hall — Marriage halls in Madhubani district", template: "%s | Hotel Videh & Marriage Hall" },
+  description: "Find the right marriage hall for your Mithila wedding. Compare capacity and starting prices, then send one enquiry and get a call back with options.",
+  icons: { icon: "/videh-logo.png" },
+  openGraph: { siteName: "Hotel Videh & Marriage Hall", type: "website", locale: "en_IN" },
+};
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="en" className={`${head.variable} ${body.variable}`}>
+      <body>
+        <a className="skip-link" href="#main">Skip to content</a>
+        <Navbar />
+        <main id="main">{children}</main>
+        <Footer />
+        <EnquireFab />
+      </body>
+    </html>
+  );
+}

@@ -1,0 +1,365 @@
+/* ==========================================================================
+   Videh — Shubh Vivah theme (loaded after globals.css and theme.css)
+   Light paper background kept. Accents move to the colours of a Mithila
+   wedding: sindoor red, haldi yellow, marigold, kumkum maroon, leaf green
+   and Mithila pink. Motifs: toran garlands, kohbar, fish pair, lotus.
+   ========================================================================== */
+:root{
+  --ink:#2A1A1F;--muted:#6A5A5E;
+  --paper:#FFFCF6;--cream:#FFF5E1;
+  --green:#7B1E2E;            /* primary dark → kumkum maroon */
+  --green2:#962638;
+  --rust:#C62832;             /* accent → sindoor red */
+  --gold:#EDA621;             /* haldi */
+  --marigold:#EC7A22;
+  --pink:#D93E74;
+  --leaf:#3E7B4F;
+  --rose:#FDEBEF;--sun:#FFF2CF;--mint:#EEF5E6;--sky:#FFF0F3;
+  --line:#EFDCC6;
+  --serif:var(--font-head),'Yatra One',Georgia,serif;
+  --script:var(--font-head),'Yatra One',Georgia,serif;
+}
+body{background-color:var(--paper)}
+body:before{opacity:.04}
+::selection{background:var(--gold);color:var(--ink)}
+em{color:var(--rust)}
+.section-heading h2 em,.intro-copy h2 em,.promise-section h2 em,.closing-inner h2 em,.culture-inner h2 em,.listing-heading h1 em{color:var(--rust)}
+.eyebrow{color:var(--green)}
+.eyebrow:before{width:44px;height:20px;background-image:url('/fish-pair.svg')}
+
+/* ---------- Header: toran garland hangs under the bar ---------- */
+.topline{background:linear-gradient(90deg,var(--green),#9C2A3B 55%,var(--green));color:#FFEFD0;font-size:13.5px}
+.topline-script{font-family:var(--script);font-weight:400;color:var(--gold);font-size:15px;margin-right:6px}
+.topline-right{color:#FFD99A;opacity:1;letter-spacing:.04em}
+.site-header{background:rgba(255,252,246,.96)}
+.site-header:after{height:0;background:none}
+.site-header:before{content:"";position:absolute;left:0;right:0;top:100%;height:30px;background:url('/toran.svg') repeat-x 0 0/58px 32px;pointer-events:none;filter:drop-shadow(0 3px 2px rgba(90,22,34,.12))}
+.desktop-nav{gap:26px}
+.desktop-nav a{font-size:15px;font-weight:600}
+.desktop-nav a:after{background:var(--rust)}
+.desktop-nav a.nav-plan{color:#fff;background:var(--rust);padding:8px 16px;border-radius:30px;box-shadow:0 4px 0 #8E1A24;transition:transform .2s,box-shadow .2s}
+.desktop-nav a.nav-plan:after{display:none}
+.desktop-nav a.nav-plan:hover{transform:translateY(-2px);box-shadow:0 6px 0 #8E1A24;color:#fff}
+.account-link{border-color:var(--green);color:var(--green)}
+.account-link:hover{background:var(--green)}
+@media(max-width:1060px){.desktop-nav{gap:18px}.desktop-nav a{font-size:14px}}
+
+/* ---------- Buttons ---------- */
+.button-dark{background:var(--rust);color:#fff}
+.button-dark:before{background:var(--green)}
+.button-dark:hover{background:var(--rust)}
+.button-outline{border-color:var(--green);color:var(--green);background:#fff}
+.button-outline:before{background:var(--sun)}
+
+/* ---------- Hero ---------- */
+.hero-wedding{background:
+  radial-gradient(ellipse at 85% 10%,rgba(253,235,239,.95),transparent 55%),
+  radial-gradient(ellipse at 0% 100%,rgba(255,242,207,.95),transparent 60%),
+  linear-gradient(180deg,#FFF9EC,#FFFCF6)}
+.hero-wedding:before{opacity:.05}
+.hero-toran{position:absolute;left:0;right:0;top:0;height:46px;background:url('/toran.svg') repeat-x 0 0/84px 46px;z-index:3;pointer-events:none}
+.hero-wedding .hero2-grid{padding-top:84px}
+.hero-script{font-family:var(--script);font-weight:400;font-size:clamp(28px,3vw,38px);line-height:1;color:var(--rust);margin:0 0 8px;display:flex;align-items:center;gap:12px}
+.hero-script:before,.hero-script:after{content:"";width:34px;height:2px;background:linear-gradient(90deg,transparent,var(--gold))}
+.hero-script:after{background:linear-gradient(90deg,var(--gold),transparent)}
+.hero-wedding .hero2-text h1{font-size:clamp(36px,4.4vw,58px);line-height:1.1;color:var(--green)}
+.hero-wedding .hero2-text p{color:var(--muted)}
+.hero-cta-row{display:flex;flex-wrap:wrap;align-items:center;gap:14px 22px}
+.hero-ghost{display:inline-flex;align-items:center;gap:8px;font-weight:700;color:var(--green);border-bottom:2px dotted var(--rust);padding-bottom:2px;transition:color .2s,gap .2s}
+.hero-ghost:hover{color:var(--rust);gap:12px}
+.hero2-dots button.active{background:var(--rust)}
+.hero2-arrow,.slider-btn{border-color:var(--green);color:var(--green)}
+.hero2-arrow:hover,.slider-btn:hover{background:var(--green)}
+
+/* Arched mandap frame */
+.hero-wedding .hero2-frame{border-radius:48% 48% 14px 14px / 34% 34% 14px 14px;border:3px solid var(--rust);padding:14px;box-shadow:12px 12px 0 var(--gold);background:
+  repeating-linear-gradient(45deg,#fff 0 6px,var(--rose) 6px 12px)}
+.hero-wedding .hero2-frame:before{inset:6px;border-radius:48% 48% 10px 10px / 34% 34% 10px 10px;border:2px dashed var(--green)}
+.hero-wedding .hero2-stage{border-radius:46% 46% 8px 8px / 32% 32% 8px 8px}
+.hero-wedding .hero2-frame:after{right:auto;left:50%;top:-44px;margin-left:-44px;width:88px;height:88px}
+.hero-wedding .hero2-frame:hover{transform:translate(-3px,-3px);box-shadow:16px 16px 0 var(--gold)}
+.hero2-chip{border-color:var(--rust);color:var(--green);left:50%;transform:translateX(-50%);bottom:20px;white-space:nowrap;box-shadow:0 4px 0 var(--gold)}
+.hero-fishpair{position:absolute;right:-26px;bottom:-22px;width:116px;height:52px;background:url('/fish-pair.svg') no-repeat center/contain;z-index:6;animation:swim 4s ease-in-out infinite alternate}
+@keyframes swim{to{transform:translateY(-6px) rotate(-3deg)}}
+
+/* Falling marigold petals */
+.petals{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:1}
+.petals span{position:absolute;top:-30px;width:14px;height:18px;background:url('/petal.svg') no-repeat center/contain;opacity:.75;animation:fall 14s linear infinite}
+.petals span:nth-child(1){left:6%;animation-delay:0s}
+.petals span:nth-child(2){left:18%;animation-delay:-4s;animation-duration:17s}
+.petals span:nth-child(3){left:31%;animation-delay:-9s;width:10px;height:13px}
+.petals span:nth-child(4){left:44%;animation-delay:-2s;animation-duration:19s}
+.petals span:nth-child(5){left:57%;animation-delay:-11s;width:11px}
+.petals span:nth-child(6){left:69%;animation-delay:-6s;animation-duration:16s}
+.petals span:nth-child(7){left:80%;animation-delay:-13s}
+.petals span:nth-child(8){left:90%;animation-delay:-8s;animation-duration:20s;width:10px;height:13px}
+.petals span:nth-child(9){left:97%;animation-delay:-1s}
+@keyframes fall{0%{transform:translate(0,0) rotate(0)}50%{transform:translate(30px,50vh) rotate(200deg)}100%{transform:translate(-10px,105vh) rotate(420deg);opacity:0}}
+.hero2-grid{z-index:2}
+
+/* ---------- Search card ---------- */
+.search-card{border:2px solid var(--line);border-top:4px solid var(--rust);position:relative}
+.search-card:before{content:"";position:absolute;right:18px;top:-26px;width:56px;height:26px;background:url('/fish-pair.svg') no-repeat center/contain}
+.search-tabs button.active{color:var(--rust)}
+.search-tabs button.active:after{background:var(--rust);height:3px}
+.search-field svg{color:var(--rust)}
+.search-form.has-function{grid-template-columns:1.3fr 1fr .9fr .8fr auto}
+@media(max-width:1060px){.search-form.has-function{grid-template-columns:1fr 1fr}.search-form.has-function .destination-field{grid-column:1/-1;border-right:0}.search-form.has-function .search-field{border-right:0}.search-form.has-function .search-submit{grid-column:1/-1}}
+@media(max-width:560px){.search-form.has-function{grid-template-columns:1fr}.search-form.has-function .search-field{border-bottom:1px solid var(--line);padding-bottom:12px}}
+
+/* ---------- Rituals timeline ---------- */
+.rituals-section{padding:110px 0 90px;position:relative}
+.ritual-track{list-style:none;margin:40px 0 0;padding:0;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:16px;position:relative}
+.ritual-track:before{content:"";position:absolute;left:3%;right:3%;top:31px;height:2px;background:repeating-linear-gradient(90deg,var(--rust) 0 8px,transparent 8px 14px);z-index:0}
+.ritual-card{--hue:var(--gold);--tint:var(--sun);position:relative;z-index:1;background:#fff;border:1.5px solid var(--line);border-radius:14px;padding:16px 16px 18px;display:flex;flex-direction:column;transition:transform .3s,box-shadow .3s,border-color .3s}
+.ritual-card:hover{transform:translateY(-8px);border-color:var(--hue);box-shadow:6px 6px 0 var(--hue)}
+.ritual-card:after{content:"";position:absolute;inset:6px;border:1.5px dashed var(--hue);border-radius:10px;opacity:0;transition:opacity .3s;pointer-events:none}
+.ritual-card:hover:after{opacity:.55}
+.hue-haldi{--hue:#E39A12;--tint:#FFF2CF}.hue-marigold{--hue:#EC7A22;--tint:#FFE8D4}.hue-leaf{--hue:#3E7B4F;--tint:#E6F2E1}
+.hue-sindoor{--hue:#C62832;--tint:#FDE3E3}.hue-pink{--hue:#D93E74;--tint:#FDE6EF}.hue-maroon{--hue:#7B1E2E;--tint:#F7E3E6}
+.ritual-step{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:var(--hue);color:#fff;font-weight:700;font-size:13px;border:3px solid #fff;box-shadow:0 0 0 2px var(--hue);margin-bottom:14px}
+.ritual-dev{font-family:var(--script);font-weight:400;font-size:26px;line-height:1.1;color:var(--hue);background:var(--tint);border-radius:8px;padding:6px 10px;align-self:flex-start;margin-bottom:10px}
+.ritual-card h3{font-family:var(--serif);font-weight:400;font-size:20px;margin:0 0 6px;color:var(--ink)}
+.ritual-card p{font-size:14px;line-height:1.6;color:var(--muted);margin:0 0 14px;flex:1}
+.ritual-link{display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:700;color:var(--hue)}
+.ritual-link svg{transition:transform .25s}.ritual-card:hover .ritual-link svg{transform:translate(3px,-3px)}
+@media(max-width:1100px){.ritual-track{grid-template-columns:repeat(3,minmax(0,1fr))}.ritual-track:before{display:none}}
+@media(max-width:760px){.rituals-section{padding:80px 0 60px}.ritual-track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;padding:6px 18px 18px;margin-inline:-18px}.ritual-card{flex:0 0 74%;scroll-snap-align:start}}
+
+/* ---------- Category tiles ---------- */
+.discover-section{background-image:linear-gradient(rgba(253,235,239,.92),rgba(255,242,207,.92)),url('/mithila-pattern.svg');background-size:auto,300px;position:relative}
+.discover-section:before,.discover-section:after{content:"";position:absolute;left:0;right:0;height:22px;background:url('/mithila-border.svg') repeat-x center}
+.discover-section:before{top:0}.discover-section:after{bottom:0}
+.category-tile{border-radius:46% 46% 12px 12px / 22% 22% 12px 12px;border:3px solid #fff;box-shadow:0 0 0 2px var(--rust),8px 8px 0 2px var(--gold)}
+.category-tile:after{background:linear-gradient(0deg,rgba(90,18,32,.92),rgba(90,18,32,.05) 70%)}
+.category-tile:before{border-color:#FFE6A0;border-radius:44% 44% 8px 8px / 20% 20% 8px 8px}
+.category-tile>div>span:first-child{font-family:var(--script);font-size:17px;font-weight:400;color:#FFD27A}
+.category-tile:hover{box-shadow:0 0 0 2px var(--rust),12px 12px 0 2px var(--gold)}
+
+/* ---------- Property cards ---------- */
+.property-card:hover{box-shadow:7px 7px 0 var(--gold);border-color:var(--rust)}
+.property-card:after{border-color:var(--rust)}
+.property-card:hover .property-name{color:var(--rust)}
+.property-tag{background:var(--rust)}
+.image-category{background:rgba(123,30,46,.9)}
+.quick-view{background:var(--rust)}
+.card-arrow{border-color:var(--green);color:var(--green)}
+.rating{color:#9A5A00}
+.property-wedding{display:block;font-size:13px;color:var(--green);background:var(--rose);border-radius:6px;padding:5px 9px;margin:8px 0 2px;line-height:1.35;font-weight:600}
+.property-wedding svg{display:inline-block;vertical-align:-2px;margin-right:6px;color:var(--rust)}
+.property-wedding span{font-weight:500;color:var(--muted)}
+
+/* ---------- Budget planner ---------- */
+.planner-section{padding:110px 0;background:linear-gradient(180deg,var(--paper),var(--cream));position:relative}
+.planner-section:before{content:"";position:absolute;left:0;right:0;top:0;height:22px;background:url('/mithila-border.svg') repeat-x center}
+.planner-grid{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:60px;align-items:center}
+.planner-intro h2{font-family:var(--serif);font-weight:400;font-size:clamp(34px,4vw,48px);line-height:1.12;margin:14px 0 16px;color:var(--green)}
+.planner-intro p{font-size:17px;color:var(--muted);line-height:1.8}
+.planner-notes{list-style:none;padding:0;margin:22px 0 0;display:grid;gap:10px}
+.planner-notes li{position:relative;padding-left:28px;font-size:14px;color:var(--muted)}
+.planner-notes li:before{content:"";position:absolute;left:0;top:3px;width:18px;height:18px;background:url('/mithila-lotus.svg') no-repeat center/contain}
+.planner-card{position:relative;background:#fff;border:2px solid var(--rust);border-radius:16px;padding:28px;box-shadow:12px 12px 0 var(--gold);display:grid;gap:20px}
+.planner-card:before{content:"";position:absolute;inset:7px;border:1.5px dashed var(--green);border-radius:11px;pointer-events:none;opacity:.35}
+.planner-field{display:grid;gap:8px}
+.planner-field>span{display:flex;align-items:center;gap:7px;font-weight:600;font-size:14px;color:var(--muted)}
+.planner-field>span svg{color:var(--rust)}
+.planner-field>span strong{margin-left:auto;font-family:var(--serif);font-weight:400;font-size:20px;color:var(--green)}
+.planner-field select{width:100%;border:1.5px solid var(--line);border-radius:8px;padding:11px 12px;font-size:15px;background:#fff;color:var(--ink)}
+.planner-field select:focus{outline:0;border-color:var(--rust);box-shadow:0 0 0 3px rgba(198,40,50,.15)}
+.planner-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:8px;border-radius:8px;background:linear-gradient(90deg,var(--gold),var(--rust));outline-offset:6px;cursor:pointer}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:24px;height:24px;border-radius:50%;background:#fff;border:4px solid var(--rust);box-shadow:0 2px 0 var(--green);transition:transform .2s}
+input[type=range]::-moz-range-thumb{width:18px;height:18px;border-radius:50%;background:#fff;border:4px solid var(--rust)}
+input[type=range]:hover::-webkit-slider-thumb{transform:scale(1.15)}
+.planner-chips{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.planner-chips button{border:1.5px solid var(--line);background:#fff;border-radius:10px;padding:10px 8px;font-weight:700;font-size:14px;color:var(--ink);display:grid;gap:2px;transition:border-color .2s,background .2s,transform .2s}
+.planner-chips button small{font-weight:500;font-size:12px;color:var(--muted)}
+.planner-chips button:hover{border-color:var(--rust);transform:translateY(-2px)}
+.planner-chips button.active{background:var(--rose);border-color:var(--rust);color:var(--rust)}
+.planner-result{background:var(--sun);border-radius:12px;padding:20px;display:grid;gap:14px}
+.planner-total{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.planner-total span{font-weight:700;color:var(--muted)}
+.planner-total strong{font-family:var(--serif);font-weight:400;font-size:clamp(30px,3.4vw,40px);color:var(--green);line-height:1}
+.planner-bar{display:flex;height:14px;border-radius:8px;overflow:hidden;gap:3px;background:#fff}
+.planner-bar i{display:block;height:100%;transition:width .5s cubic-bezier(.2,.7,.2,1)}
+.b-venue{background:var(--rust)}.b-food{background:var(--gold)}.b-stay{background:var(--leaf)}
+.planner-split{margin:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.planner-split div{background:#fff;border-radius:8px;padding:10px 12px}
+.planner-split dt{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--muted)}
+.planner-split dt i{width:10px;height:10px;border-radius:3px;display:inline-block}
+.planner-split dd{margin:2px 0 0;font-weight:700;font-size:16px}
+.planner-disclaimer{margin:0;font-size:12.5px;color:var(--muted);text-align:center}
+@media(max-width:900px){.planner-grid{grid-template-columns:1fr;gap:34px}.planner-section{padding:80px 0}}
+@media(max-width:560px){.planner-card{padding:20px 16px;box-shadow:8px 8px 0 var(--gold)}.planner-row{grid-template-columns:1fr;gap:16px}.planner-split{grid-template-columns:1fr}.planner-split div{display:flex;justify-content:space-between;align-items:center}.planner-split dd{margin:0}.planner-chips button{font-size:13px;padding:9px 4px}}
+
+/* ---------- Kohbar band ---------- */
+.kohbar-band{position:relative;background:var(--rose);overflow:hidden}
+.kohbar-band:before,.kohbar-band:after{content:"";position:absolute;left:0;right:0;height:22px;background:url('/mithila-border.svg') repeat-x center;z-index:2}
+.kohbar-band:before{top:0}.kohbar-band:after{bottom:0}
+.kohbar-inner{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:64px;align-items:center;padding-top:110px;padding-bottom:110px}
+.kohbar-art{position:relative}
+.kohbar-art img{width:100%;max-width:460px;margin-inline:auto;filter:drop-shadow(12px 12px 0 var(--gold));transition:transform .5s}
+.kohbar-art:hover img{transform:rotate(-1.5deg) scale(1.02)}
+.kohbar-copy h2{font-family:var(--serif);font-weight:400;font-size:clamp(32px,3.8vw,48px);line-height:1.12;margin:14px 0 18px;color:var(--green)}
+.kohbar-copy p{font-size:17px;line-height:1.85;color:var(--muted)}
+.kohbar-symbols{list-style:none;padding:0;margin:24px 0 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.kohbar-symbols li{background:#fff;border:1.5px solid var(--line);border-radius:10px;padding:10px 14px;font-size:14px;color:var(--muted);transition:transform .25s,border-color .25s}
+.kohbar-symbols li:hover{transform:translateX(4px);border-color:var(--rust)}
+.kohbar-symbols b{display:block;font-family:var(--serif);font-weight:400;font-size:18px;color:var(--rust)}
+@media(max-width:900px){.kohbar-inner{grid-template-columns:1fr;gap:36px;padding-top:80px;padding-bottom:80px}.kohbar-art img{max-width:340px}}
+
+/* ---------- Promise + closing ---------- */
+.promise-grid>div:hover{background:var(--rose)}
+.promise-icon{border-color:var(--rust);color:var(--rust)}
+.promise-grid>div:hover .promise-icon{background:var(--rust);color:#fff}
+.closing-cta{background:linear-gradient(90deg,var(--sun),var(--rose))}
+.closing-cta:before{content:"";display:block;height:40px;background:url('/toran.svg') repeat-x 0 0/72px 40px}
+.closing-inner h2{color:var(--green)}
+.closing-actions{display:flex;flex-wrap:wrap;gap:12px}
+
+/* ---------- Footer ---------- */
+.footer{background:linear-gradient(180deg,#FFF3F5,#FFF7E8)}
+.footer-grid h4{color:var(--green)}
+.footer-blessing{font-family:var(--script);font-weight:400;color:var(--rust);font-size:15px}
+.footer-bottom{border-top-color:rgba(123,30,46,.18)}
+.socials a{border-color:var(--green);color:var(--green)}.socials a:hover{background:var(--rust);border-color:var(--rust)}
+
+/* ---------- Listing + detail ---------- */
+.detail-breadcrumb{margin-top:30px}
+.listing-heading{background-image:linear-gradient(rgba(255,242,207,.88),rgba(255,252,246,.96)),url('/mithila-pattern.svg');position:relative}
+.listing-heading h1{color:var(--green)}
+.listing-toolbar{background:var(--rose)}
+.listing-search:focus-within,.filter-select:focus-within{border-color:var(--rust);box-shadow:0 0 0 3px rgba(198,40,50,.15)}
+.empty-state{background:var(--rose)}
+.search-context span{background:var(--rose)}
+.detail-sidebar{border-color:var(--rust);border-top-width:4px;box-shadow:8px 8px 0 var(--gold)}
+.slider-viewport{border-color:var(--rust)}
+.amenities-grid span{background:var(--rose)}
+.detail-notice{background:var(--sun)}
+.wedding-fit-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.wedding-fit-grid>div{display:flex;gap:12px;align-items:center;background:var(--sun);border:1.5px solid var(--line);border-radius:10px;padding:14px 16px}
+.wedding-fit-grid svg{color:var(--rust);flex-shrink:0}
+.wedding-fit-grid span{display:grid}.wedding-fit-grid small{color:var(--muted);font-size:13px}.wedding-fit-grid strong{font-size:16px}
+.wedding-fit-label{margin:18px 0 10px;font-weight:700;font-size:14px;color:var(--muted)}
+.ritual-chips{display:flex;flex-wrap:wrap;gap:8px}
+.ritual-chips span{border:1.5px solid var(--rust);color:var(--rust);background:#fff;border-radius:30px;padding:5px 14px;font-weight:700;font-size:14px;transition:background .2s,color .2s}
+.ritual-chips span:hover{background:var(--rust);color:#fff}
+.mobile-book-bar{border-top-color:var(--rust)}
+.save-pill:hover,.save-pill.is-saved{background:var(--rust);border-color:var(--rust)}
+.faq-item[open]{border-color:var(--rust)}
+:focus-visible{outline-color:var(--rust)}
+
+/* ---------- Small screens ---------- */
+@media(max-width:900px){.hero-wedding .hero2-grid{padding-top:64px}.hero-fishpair{right:-6px;width:86px;height:40px}}
+@media(max-width:760px){.site-header:before{height:22px;background-size:42px 24px}.hero-toran{height:34px;background-size:62px 34px}.topline{font-size:12px;white-space:nowrap;overflow:hidden}.topline-long{display:none}.topline-right{display:none}.closing-actions{width:100%}.closing-actions .button{flex:1 1 220px}}
+@media(max-width:430px){.hero-wedding .hero2-frame{border-radius:46% 46% 12px 12px / 26% 26% 12px 12px}.hero2-chip{font-size:13px}.ritual-card{flex-basis:84%}}
+@media(prefers-reduced-motion:reduce){.petals{display:none}.hero-fishpair{animation:none}}
+
+/* ==========================================================================
+   Lead generation: enquiry form, enquire page, floating button
+   ========================================================================== */
+.nav-enquire{display:inline-flex;align-items:center;gap:8px;background:var(--rust);color:#fff;font-weight:700;font-size:14.5px;padding:10px 18px;border-radius:30px;box-shadow:0 4px 0 #8E1A24;transition:transform .2s,box-shadow .2s;white-space:nowrap}
+.nav-enquire:hover{transform:translateY(-2px);box-shadow:0 6px 0 #8E1A24}
+.mobile-nav .mobile-enquire{color:var(--rust);font-weight:700}
+@media(max-width:430px){.nav-enquire span{display:none}.nav-enquire{padding:10px}}
+
+.enquire-fab{display:none}
+@media(max-width:760px){
+  .enquire-fab{display:inline-flex;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:45;align-items:center;gap:8px;background:var(--rust);color:#fff;font-weight:700;font-size:15px;padding:13px 20px;border-radius:40px;box-shadow:0 5px 0 #8E1A24,0 12px 28px rgba(90,22,34,.3);animation:fabIn .5s ease .6s both}
+  @keyframes fabIn{from{opacity:0;transform:translateY(20px)}}
+  .footer{padding-bottom:70px}
+}
+
+.enquiry-form{display:grid;gap:16px}
+.enquiry-title{font-family:var(--serif);font-weight:400;font-size:24px;color:var(--green);margin:0}
+.enquiry-venue{margin:-6px 0 0;font-size:14px;color:var(--muted);background:var(--rose);border-radius:8px;padding:8px 12px}
+.enquiry-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.eq-field{display:grid;gap:6px;min-width:0}
+.eq-field>span{display:flex;align-items:center;gap:6px;font-size:13.5px;font-weight:600;color:var(--muted)}
+.eq-field>span svg{color:var(--rust)}
+.eq-field input,.eq-field select,.eq-field textarea,.eq-phone{width:100%;min-width:0;border:1.5px solid var(--line);border-radius:8px;padding:11px 12px;font-size:15px;color:var(--ink);background:#fff;font-family:inherit;transition:border-color .2s,box-shadow .2s}
+.eq-field input:focus,.eq-field select:focus,.eq-field textarea:focus,.eq-phone:focus-within{outline:0;border-color:var(--rust);box-shadow:0 0 0 3px rgba(198,40,50,.15)}
+.eq-field input:disabled{background:#F6F1EA;color:#A89A92}
+.eq-phone{display:flex;align-items:center;gap:8px;padding:0 0 0 12px}
+.eq-phone b{color:var(--muted);font-weight:600;font-size:15px}
+.eq-phone input{border:0;box-shadow:none!important;padding-left:0}
+.eq-wide{grid-column:1/-1}
+.eq-check{display:flex;align-items:flex-start;gap:9px;font-size:14px;color:var(--muted);cursor:pointer;margin-top:-6px}
+.eq-check input{width:18px;height:18px;margin:1px 0 0;accent-color:var(--rust);flex-shrink:0}
+.eq-consent{margin-top:0;font-size:13px}
+.eq-chips{display:flex;flex-wrap:wrap;gap:8px}
+.eq-chips button{border:1.5px solid var(--line);background:#fff;color:var(--ink);border-radius:30px;padding:7px 14px;font-weight:600;font-size:14px;transition:border-color .2s,background .2s,color .2s}
+.eq-chips button:hover{border-color:var(--rust)}
+.eq-chips button.active{background:var(--rust);border-color:var(--rust);color:#fff}
+.eq-more{justify-self:start;display:inline-flex;align-items:center;gap:6px;background:none;border:0;padding:0;color:var(--green);font-weight:700;font-size:14px;border-bottom:2px dotted var(--rust)}
+.eq-more svg{transition:transform .25s}.eq-more[aria-expanded=true] svg{transform:rotate(180deg)}
+.eq-extra{animation:dropIn .25s ease}
+.eq-trap{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.eq-error{margin:0;background:#FDE3E3;color:#9B1C24;border-radius:8px;padding:10px 12px;font-size:14px;font-weight:600}
+.eq-note{margin:0;text-align:center;font-size:12.5px;color:var(--muted)}
+.enquiry-form .button[disabled]{opacity:.65;cursor:not-allowed}
+.spin{animation:spin 1s linear infinite}
+.enquiry-done{text-align:center;padding:26px 8px}
+.enquiry-done>svg{color:var(--leaf);margin:0 auto 10px}
+.enquiry-done .eyebrow{justify-content:center}
+.enquiry-done h3{font-family:var(--serif);font-weight:400;font-size:28px;color:var(--green);margin:8px 0}
+.enquiry-done p{color:var(--muted);font-size:16px;line-height:1.7;margin:0}
+@media(max-width:430px){.enquiry-grid{grid-template-columns:1fr}}
+
+/* Card wrapper used on home + enquire page */
+.enquire-card{position:relative;background:#fff;border:2px solid var(--rust);border-top-width:5px;border-radius:16px;padding:28px;box-shadow:12px 12px 0 var(--gold)}
+.enquire-card:before{content:"";position:absolute;right:20px;top:-30px;width:64px;height:30px;background:url('/fish-pair.svg') no-repeat center/contain}
+@media(max-width:560px){.enquire-card{padding:20px 16px;box-shadow:8px 8px 0 var(--gold)}}
+
+/* Enquire page */
+.enquire-page .listing-heading h1 em{color:var(--rust)}
+.enquire-layout{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:48px;align-items:start;padding-top:34px;padding-bottom:110px}
+.enquire-side h2{font-family:var(--serif);font-weight:400;font-size:26px;color:var(--green);margin:0 0 16px}
+.how-mini{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.how-mini li{display:flex;gap:14px;align-items:flex-start;background:var(--sun);border-radius:12px;padding:16px}
+.how-mini svg{color:var(--rust);flex-shrink:0;margin-top:2px}
+.how-mini span{display:grid;font-size:14.5px;color:var(--muted);line-height:1.5}
+.how-mini strong{color:var(--ink);font-size:16px}
+.enquire-alt{margin-top:18px;font-size:15px;color:var(--muted)}.enquire-alt a{color:var(--rust);font-weight:700;text-decoration:underline}
+@media(max-width:900px){.enquire-layout{grid-template-columns:1fr;gap:36px;padding-top:24px}}
+
+/* Home: search note, how it works, enquiry block */
+.search-skip{margin:14px 0 0;font-size:14.5px;color:var(--muted)}
+.search-skip a{color:var(--rust);font-weight:700;text-decoration:underline}
+.how-section{padding-top:110px;padding-bottom:40px}
+.how-steps{list-style:none;padding:0;margin:40px 0 0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;counter-reset:s}
+.how-steps li{position:relative;background:#fff;border:1.5px solid var(--line);border-radius:14px;padding:26px 20px 22px;transition:transform .3s,box-shadow .3s,border-color .3s}
+.how-steps li:hover{transform:translateY(-6px);border-color:var(--rust);box-shadow:6px 6px 0 var(--gold)}
+.how-steps li:not(:last-child):after{content:"";position:absolute;right:-16px;top:50%;width:14px;height:14px;border-top:2.5px solid var(--rust);border-right:2.5px solid var(--rust);transform:translateY(-50%) rotate(45deg);z-index:2}
+.how-num{position:absolute;top:-14px;left:20px;width:30px;height:30px;border-radius:50%;background:var(--rust);color:#fff;display:grid;place-items:center;font-weight:700;font-size:14px;border:3px solid #fff;box-shadow:0 0 0 2px var(--rust)}
+.how-icon{width:50px;height:50px;border-radius:50%;background:var(--rose);color:var(--rust);display:grid;place-items:center;margin:6px 0 14px}
+.how-steps h3{font-family:var(--serif);font-weight:400;font-size:21px;margin:0 0 6px;color:var(--green)}
+.how-steps p{margin:0;font-size:14.5px;color:var(--muted);line-height:1.6}
+.how-cta{margin-top:30px;text-align:center}
+@media(max-width:1000px){.how-steps{grid-template-columns:repeat(2,minmax(0,1fr));gap:26px 18px}.how-steps li:after{display:none}}
+@media(max-width:560px){.how-steps{grid-template-columns:1fr}.how-section{padding-top:80px}}
+
+.home-enquiry{position:relative;background:var(--rose);overflow:hidden}
+.home-enquiry:before,.home-enquiry:after{content:"";position:absolute;left:0;right:0;height:22px;background:url('/mithila-border.svg') repeat-x center;z-index:2}
+.home-enquiry:before{top:0}.home-enquiry:after{bottom:0}
+.home-enquiry-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:56px;align-items:center;padding-top:110px;padding-bottom:110px}
+.home-enquiry-copy h2{font-family:var(--serif);font-weight:400;font-size:clamp(32px,3.8vw,48px);line-height:1.12;margin:14px 0 16px;color:var(--green)}
+.home-enquiry-copy>p{font-size:17px;line-height:1.8;color:var(--muted)}
+.enquiry-points{list-style:none;padding:0;margin:20px 0 0;display:grid;gap:10px}
+.enquiry-points li{display:flex;align-items:center;gap:10px;font-weight:600;font-size:15px}
+.enquiry-points svg{color:var(--rust);flex-shrink:0}
+.home-enquiry-art{width:min(260px,70%);margin-top:30px;filter:drop-shadow(8px 8px 0 var(--gold));transform:rotate(-3deg)}
+@media(max-width:900px){.home-enquiry-grid{grid-template-columns:1fr;gap:34px;padding-top:80px;padding-bottom:80px}.home-enquiry-art{display:none}}
+
+/* Listing + hall page */
+.listing-enquire{margin-top:30px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;background:var(--sun);border:2px dashed var(--rust);border-radius:14px;padding:20px 24px}
+.listing-enquire div{display:grid;gap:2px}.listing-enquire strong{font-size:17px}.listing-enquire span{color:var(--muted);font-size:14.5px}
+.empty-state .button{margin:6px}
+.results-line .button{padding:9px 16px;font-size:14px}
+.sidebar-price{display:grid;gap:2px;padding-bottom:16px;margin-bottom:18px;border-bottom:1.5px dashed var(--line)}
+.sidebar-price span{font-size:13px;font-weight:700;color:var(--muted)}
+.sidebar-price strong{font-family:var(--serif);font-weight:400;font-size:32px;color:var(--green);line-height:1.1}
+.sidebar-price small{font-size:13px;color:var(--muted)}
+.detail-sidebar{scroll-margin-top:140px}
+.planner-span2{grid-column:span 2}
+@media(max-width:560px){.planner-span2{grid-column:auto}}
